@@ -7,11 +7,14 @@
 
 <AnchorPane prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: #F5DEB3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.meshalkina.coffee_machine.controller.SuccessfullyController">
    <children>
-      <Label layoutX="10.0" layoutY="14.0" text="Оплата проведена успешно">
+      <Label layoutX="7.0" layoutY="14.0" text="Оплата проведена успешно" textFill="#2b1208">
          <font>
-            <Font name="Times New Roman" size="24.0" />
+            <Font name="Book Antiqua" size="22.0" />
          </font>
       </Label>
-      <Button fx:id="successfullyOK" layoutX="120.0" layoutY="55.0" mnemonicParsing="false" onAction="#openNewStage" prefHeight="30.0" prefWidth="60.0" text="OK" />
+      <Button fx:id="successfullyOK" layoutX="120.0" layoutY="55.0" mnemonicParsing="false" onAction="#openNewStage" prefHeight="30.0" prefWidth="60.0" text="OK" textFill="#2b1208">
+         <font>
+            <Font name="Book Antiqua" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

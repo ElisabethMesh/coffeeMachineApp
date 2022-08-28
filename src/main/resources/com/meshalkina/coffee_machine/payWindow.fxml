@@ -13,34 +13,37 @@
             <children>
                 <Label layoutX="44.0" prefHeight="51.0" prefWidth="140.0" text="Итого" textFill="#2b1208">
                     <font>
-                        <Font name="Times New Roman" size="35.0" />
+                        <Font name="Book Antiqua" size="35.0" />
                     </font>
                 </Label>
                 <AnchorPane layoutX="114.0" layoutY="53.0" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: white;">
                     <children>
-                        <Text fx:id="total" fill="#2b1208" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="170.93670654296875">
+                        <Text fx:id="total" fill="#2b1208" layoutX="34.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="82.39999999999986">
                             <font>
-                                <Font size="25.0" />
+                                <Font name="Book Antiqua" size="25.0" />
                             </font>
                         </Text>
                     </children>
                 </AnchorPane>
             </children>
         </AnchorPane>
-        <TextField fx:id="sumForPay" layoutX="43.0" layoutY="173.0" prefHeight="50.0" prefWidth="171.0" />
+        <TextField fx:id="sumForPay" layoutX="43.0" layoutY="173.0" prefHeight="50.0" prefWidth="171.0">
+         <font>
+            <Font name="Book Antiqua" size="25.0" />
+         </font></TextField>
         <Label layoutX="43.0" layoutY="134.0" prefHeight="32.0" prefWidth="314.0" text="Введите сумму для оплаты" textFill="#2b1208">
             <font>
-                <Font name="Times New Roman" size="27.0" />
+                <Font name="Book Antiqua" size="25.0" />
             </font>
         </Label>
         <Button fx:id="inputButton" layoutX="230.0" layoutY="173.0" mnemonicParsing="false" onAction="#openNewStage" prefHeight="50.0" prefWidth="56.0" text="Ввод" textFill="#2b1208">
             <font>
-                <Font size="15.0" />
+                <Font name="Book Antiqua" size="15.0" />
             </font>
         </Button>
-      <Button fx:id="cancelButton" layoutX="297.0" layoutY="173.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="82.0" text="Отмена" onAction="#cancelAction">
+      <Button fx:id="cancelButton" layoutX="297.0" layoutY="173.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="51.0" prefWidth="82.0" text="Отмена" textFill="#2b1208">
          <font>
-            <Font size="16.0" />
+            <Font name="Book Antiqua" size="15.0" />
          </font>
       </Button>
     </children>

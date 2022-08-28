@@ -5,6 +5,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -13,40 +15,40 @@
    <children>
       <AnchorPane layoutY="401.0" prefHeight="200.0" prefWidth="800.0" style="-fx-background-color: #F5DEB3;">
          <children>
-            <Label layoutX="14.0" layoutY="5.0" text="Корзина" textFill="#2b1208">
+            <Label layoutX="14.0" layoutY="2.0" text="Корзина" textFill="#2b1208">
                <font>
-                  <Font name="Times New Roman" size="30.0" />
+                  <Font name="Book Antiqua Bold" size="30.0" />
                </font>
             </Label>
-            <Label layoutX="580.0" layoutY="5.0" text="Итоговая сумма" textFill="#2b1208">
+            <Label layoutX="552.0" layoutY="2.0" text="Итоговая сумма" textFill="#2b1208">
                <font>
-                  <Font name="Times New Roman" size="30.0" />
+                  <Font name="Book Antiqua Bold" size="30.0" />
                </font>
             </Label>
             <TableView fx:id="basket" layoutX="2.0" layoutY="46.0" prefHeight="150.0" prefWidth="500.0">
               <columns>
-                <TableColumn fx:id="numBasket" prefWidth="36.800018310546875" text="№" />
-                <TableColumn fx:id="nameBasket" minWidth="0.0" prefWidth="167.19998168945312" text="Наименовавние" />
+                <TableColumn fx:id="numBasket" prefWidth="52.800018310546875" text="№" />
+                <TableColumn fx:id="nameBasket" minWidth="0.0" prefWidth="141.60000610351562" text="Наименовавние" />
                   <TableColumn fx:id="priceBasket" prefWidth="101.60009765625" text="Цена" />
                   <TableColumn fx:id="amountBasket" prefWidth="75.199951171875" text="Кол-во" />
                   <TableColumn fx:id="sumBasket" prefWidth="122.4000244140625" text="Сумма" />
               </columns>
             </TableView>
-            <Button fx:id="pay" layoutX="623.0" layoutY="125.0" mnemonicParsing="false" onAction="#openNewStage" text="Оплатить" textFill="#2b1208">
+            <Button fx:id="pay" layoutX="609.0" layoutY="126.0" mnemonicParsing="false" onAction="#openNewStage" text="Оплатить" textFill="#2b1208">
                <font>
-                  <Font name="Times New Roman" size="30.0" />
+                  <Font name="Book Antiqua" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="clearBasket" layoutX="357.0" layoutY="9.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Очистить корзину" textFill="#2b1208"  onAction="#clearBasket">
+            <Button fx:id="clearBasket" layoutX="362.0" layoutY="8.0" mnemonicParsing="false" onAction="#clearBasket" prefHeight="26.0" prefWidth="139.0" text="Очистить корзину" textFill="#2b1208">
                <font>
-                  <Font name="Times New Roman" size="15.0" />
+                  <Font name="Book Antiqua" size="13.0" />
                </font>
             </Button>
             <AnchorPane layoutX="590.0" layoutY="46.0" prefHeight="73.0" prefWidth="195.0" style="-fx-background-color: white;">
                <children>
-                  <Text fx:id="totalSum" fill="#2b1208" layoutX="51.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="129.3367919921875">
+                  <Text fx:id="totalSum" fill="#2b1208" layoutX="67.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="113.3367919921875">
                      <font>
-                        <Font size="35.0" />
+                        <Font name="Book Antiqua" size="35.0" />
                      </font>
                   </Text>
                </children>
@@ -57,11 +59,17 @@
          <children>
             <Label layoutX="14.0" layoutY="3.0" text="Выберите напиток" textFill="#2b1208">
                <font>
-                  <Font name="Times New Roman" size="30.0" />
+                  <Font name="Book Antiqua Bold" size="30.0" />
                </font>
             </Label>
-            <TextField fx:id="filterField" layoutX="524.0" layoutY="5.0" prefHeight="28.0" prefWidth="206.0" promptText="Поиск" />
-            <Button fx:id="searchButton" layoutX="733.0" layoutY="5.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="54.0" text="Искать" textFill="#2b1208" />
+            <TextField fx:id="filterField" layoutX="510.0" layoutY="9.0" prefHeight="26.0" prefWidth="206.0" promptText="Поиск">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font></TextField>
+            <Button fx:id="searchButton" layoutX="724.0" layoutY="8.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="61.0" text="Искать" textFill="#2b1208">
+               <font>
+                  <Font name="Book Antiqua" size="13.0" />
+               </font></Button>
          </children>
       </AnchorPane>
       <TableView fx:id="menu" layoutY="49.0" prefHeight="350.0" prefWidth="500.0">
@@ -71,5 +79,10 @@
             <TableColumn fx:id="priceMenu" prefWidth="149.5999755859375" text="Цена" />
         </columns>
       </TableView>
+      <ImageView fitHeight="211.0" fitWidth="206.0" layoutX="547.0" layoutY="94.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../image/java-logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

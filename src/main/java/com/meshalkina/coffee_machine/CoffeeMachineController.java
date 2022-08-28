@@ -12,11 +12,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -88,18 +86,23 @@ public class CoffeeMachineController implements Initializable {
         amountBasket.setCellValueFactory(new PropertyValueFactory<>("amount"));
         sumBasket.setCellValueFactory(new PropertyValueFactory<>("sum"));
         basket.setItems(getBasketList());
+        basket.setPlaceholder(new Label("Корзина пуста"));
 
         totalSum.setText(String.valueOf(basketService.getSum()));
 
         menu.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) ->
-                {
+        {
+            menu.setOnMousePressed(e ->
+            {
+                if (e.getClickCount() == 2 && e.isPrimaryButtonDown()) {
                     basketService.putInBasket(observable.getValue());
                     basket.setItems(getBasketList());
                     basket.refresh();
 
                     totalSum.setText(String.valueOf(basketService.getSum()));
                 }
-        );
+            });
+        });
 
         searchButton.setOnAction(event -> {
             String query = filterField.getText().toLowerCase(Locale.ROOT).trim();
@@ -151,16 +154,18 @@ public class CoffeeMachineController implements Initializable {
     }
 
     public void openNewStage(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CoffeeMachineController.class.getResource("payWindow.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 400, 250);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.setTitle("Payment window");
-        stage.show();
+        if (!basket.getItems().isEmpty()) {
+            FXMLLoader fxmlLoader = new FXMLLoader(CoffeeMachineController.class.getResource("payWindow.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 400, 250);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.setTitle("Payment window");
+            stage.show();
 
-        final Node source = (Node) event.getSource();
-        final Stage stage1 = (Stage) source.getScene().getWindow();
-        stage1.close();
+            final Node source = (Node) event.getSource();
+            final Stage stage1 = (Stage) source.getScene().getWindow();
+            stage1.close();
+        }
     }
 
     public void clearBasket(ActionEvent event) {
